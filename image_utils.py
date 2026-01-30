@@ -7,9 +7,8 @@ def load_image(file_path):
   image_array = np.array(image)
   return image_array
 
-def edge_detection(image):
-  image_array = Image.open(image).convert('L')
-  image_gray = np.array(image_array)
+def edge_detection(image_array):
+  image_gray = np.mean(image_array, axis=2)
   filterX = np.array([[-1, 0, 1],
                      [-2 ,0, 2],
                      [-1 ,0, 1]])
